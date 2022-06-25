@@ -3,10 +3,8 @@
 /*
  color palates -  https://colorhunt.co/palette/0000001a4d2eff9f29faf3e3
 */
-
-$primary_color: #FF9F29;
-$light_color: #FAF3E3;
-$dark_color: #000000;
+@import 'filter';
+@import 'variables';
 
 *{
   margin: 0;
@@ -39,6 +37,13 @@ a{
     color: $light_color;
     overflow: hidden;
   }
+.navbar_container{
+  padding: 5px 10px;
+  text-align: right;
+}
+.navbar_container span{
+  cursor: pointer;
+}
 
   // Loader
   .loader_com{

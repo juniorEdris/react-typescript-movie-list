@@ -6,7 +6,6 @@ const userExist = localStorage.getItem('accessToken');
 
 const Loader = (Component:any) => (props:any) => (
     <Suspense fallback={<CircleLoading />}>
-        <p onClick={()=> localStorage.clear()}>Log out</p>
         <Component {...props} />
     </Suspense>
 )

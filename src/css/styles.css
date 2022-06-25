@@ -2,6 +2,63 @@
 /*
  color palates -  https://colorhunt.co/palette/0000001a4d2eff9f29faf3e3
 */
+.dropdown {
+  position: absolute;
+  right: 10px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  color: #000000;
+}
+
+.dropdown-header {
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-body {
+  padding: 5px;
+  border-top: 1px solid #FF9F29;
+  display: none;
+}
+
+.dropdown-body.open {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+.dropdown-item-dot {
+  opacity: 0;
+  color: #FF9F29;
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-item-dot.selected {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 13px;
+  color: #FF9F29;
+  transform: rotate(0deg);
+  transition: all 0.2s ease-in-out;
+}
+
+.icon.open {
+  transform: rotate(90deg);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +89,15 @@ a {
   background-color: #000000;
   color: #FAF3E3;
   overflow: hidden;
+}
+
+.navbar_container {
+  padding: 5px 10px;
+  text-align: right;
+}
+
+.navbar_container span {
+  cursor: pointer;
 }
 
 .loader_com {
