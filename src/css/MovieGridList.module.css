@@ -1,0 +1,47 @@
+.movie_list_container{
+    padding: 10px; 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 7px;
+}
+.movie_body{
+    width: 250px;
+    height: auto;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    padding: 5px;
+}
+.movie_image{
+    height: 235px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.movie_image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.movie_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.movie_name{
+    text-transform: capitalize;
+}
+.movie_released_year{
+    color: #FF9F29;
+}
+
+@media (max-width: 768px) {
+    .movie_list_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 420px) {
+    .movie_list_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  }

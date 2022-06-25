@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+/*
+ color palates -  https://colorhunt.co/palette/0000001a4d2eff9f29faf3e3
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #FF9F29;
+  border-radius: 8px;
+}
+
+a {
+  color: #FAF3E3;
+  text-decoration: none;
+}
+
+.App {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #000000;
+  color: #FAF3E3;
+  overflow: hidden;
+}
+
+.loader_com {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.load-wrapp {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px 10px 0;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ring-2 {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  border: 4px solid #FF9F29;
+  border-radius: 100%;
+}
+
+.ball-holder {
+  position: absolute;
+  width: 12px;
+  height: 45px;
+  left: 17px;
+  top: 0px;
+}
+
+.ball {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: #FF9F29;
+}
+
+.load-5 .ball-holder {
+  animation: loadingE 1.3s linear infinite;
+}
+
+@keyframes loadingE {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
