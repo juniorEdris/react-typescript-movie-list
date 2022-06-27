@@ -11,6 +11,19 @@
     margin-bottom: 5px;
     border-radius: 3px;
     padding: 5px;
+    cursor: pointer;
+}
+.movie_body::after{
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #FF9F29;
+    transform: scaleX(0);
+    transition: transform ease .3s;
+    margin-top: 3px;  
+}
+.movie_body:hover::after{
+    transform: scaleX(1);
 }
 .movie_image{
     height: 235px;
