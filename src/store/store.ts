@@ -1,49 +1,20 @@
-import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-// interface Count {
-//     count: number;
-// }
-
-interface counterState  {
-    count: number;
-}
-const initialState: counterState = {
-    count: 0
-}
-
-export const counterSlice = createSlice({
-    name: 'counter',
-    // `createSlice` will infer the state type from the `initialState` argument
-    initialState,
-    reducers: {
-      increment: (state, action:PayloadAction<number>) => {
-          console.log({action});
-        state.count += action.payload
-      },
-      decrement: (state, action:PayloadAction<number>) => {
-          console.log({action});
-        state.count -= action.payload
-      },
-      // Use the PayloadAction type to declare the contents of `action.payload`
-      incrementByAmount: (state, action: PayloadAction<number>) => {
-          console.log({action});
-          
-        state.count += action.payload
-      }
-    }
-  })
-
-  
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+import { configureStore } from '@reduxjs/toolkit'
+import authSlice from 'features/auth/authSlice';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer
+    auth: authSlice
   }
 })
 
 export default store;
 
-type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>;
 
-export const selectCounter = (state:RootState) => state.counter.count
+export type AppDispatch = typeof store.dispatch;
+
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
