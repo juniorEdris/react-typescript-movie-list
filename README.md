@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# Frontend.Typescript.Movielist.App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# React.js + Nestjs App
 
-In the project directory, you can run:
+    > Includes MERN Stack
 
-### `npm start`
+# Start the APP
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    > first clone Backend repo -  https://github.com/juniorEdris/nestjs-mongodb-app.git
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    > # Dont need any .env file all usefull links are in app
 
-### `npm test`
+    > run npm/yarn install for install all the necessary dipendencies
+    
+    > run npm/yarn start:dev for starting the nestjs server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    > then clone Frontend repo https://github.com/juniorEdris/react-typescript-movie-list.git
 
-### `npm run build`
+    > # Backend API Host number
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        API_DOMAIN = http://localhost:5000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    > run npm/yarn start to start the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+    > Wallaah! APP is ready to test.
+ 
