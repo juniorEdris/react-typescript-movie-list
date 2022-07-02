@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { MovieDocument } from './movies.interfaces';
+import { ActionReducerMapBuilder, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { Movie, MovieDocument } from './movies.interfaces';
 import movieServices from './movies.services';
 
 interface AsyncState {
@@ -8,11 +8,11 @@ interface AsyncState {
   isError: boolean;
 }
 
-interface ProductState extends AsyncState {
+interface MovieState extends AsyncState {
   movies: MovieDocument[];
 }
 
-const initialState: ProductState = {
+const initialState: MovieState = {
   movies: [],
   isLoading: false,
   isSuccess: false,
@@ -28,12 +28,21 @@ export const getMovies = createAsyncThunk('movie', async () => {
   }
 });
 
+export const addMovie = createAsyncThunk('add-movie', async (movie: Movie) => {
+  try {
+    return await movieServices.addMovie(movie);
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+});
+
 export const movieSlice = createSlice({
   name: 'movie',
   initialState,
   reducers: {},
-  extraReducers: (builder) => {
+  extraReducers: (builder: ActionReducerMapBuilder<MovieState>) => {
     builder
+    // GET MOVIES
       .addCase(getMovies.pending, (state) => {
         state.isLoading = true;
       })

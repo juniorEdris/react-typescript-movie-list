@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 import { url } from 'features/auth/auth.service';
-import { MovieDocument } from './movies.interfaces';
+import { Movie, MovieDocument } from './movies.interfaces';
 
 let BaseApi = axios.create({
     baseURL: url,
@@ -26,8 +26,18 @@ const getMovies = async () => {
   return response;
 };
 
+const addMovie = async (movie:Movie) => {
+  
+  const response = await API().post(
+    `/movies/add-movie`, movie
+  );  
+
+  return response.data;
+};
+
 const movieServices = {
   getMovies,
+  addMovie
 };
 
 export default movieServices;

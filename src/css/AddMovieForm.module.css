@@ -1,0 +1,40 @@
+.form_page{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_body{
+    width: 540px;
+    height: 400px;
+    padding: 0 10px;
+}
+.form_header{
+    margin: 15px 0;
+}
+form{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+form div{
+    margin-bottom: 20px;
+}
+form input,
+form button{
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+}
+button{
+    color:#FAF3E3 ;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #FF9F29;
+    font-weight: 600;
+}
+button:hover{
+    background-color: #ff9f29d9;
+}

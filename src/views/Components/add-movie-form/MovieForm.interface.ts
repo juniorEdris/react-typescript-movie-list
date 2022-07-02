@@ -1,5 +1,5 @@
 export interface MovieDetails {
     name: string;
-    releasedYear: number;
+    release_year: number;
     image: string
 }
