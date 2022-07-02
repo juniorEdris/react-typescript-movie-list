@@ -11,7 +11,7 @@ const MovieCard: FC<MovieCardProps> = (props) => {
             </div>
             <div className={Styles.movie_header}>
             <div className={Styles.movie_name}>{movie?.name}</div>
-            <div className={Styles.movie_released_year}>{movie?.released_year}</div>
+            <div className={Styles.movie_released_year}>{movie?.release_year}</div>
             </div>
         </div>
      );

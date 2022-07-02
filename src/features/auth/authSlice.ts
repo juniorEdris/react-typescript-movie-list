@@ -7,7 +7,7 @@ const storedUser: string | null = localStorage.getItem('user');
 const user: DisplayUser | null = !!storedUser ? JSON.parse(storedUser) : null;
 
 const storedJwt: string | null = localStorage.getItem('accessToken');
-const jwt: JWT = !!storedJwt ? JSON.parse(storedJwt) : null;
+const jwt: JWT = !!storedJwt ? storedJwt : null;
 
 const initialState: AuthState = {
     user: user,

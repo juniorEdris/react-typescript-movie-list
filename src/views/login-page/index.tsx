@@ -13,7 +13,7 @@ const LoginPage: FC<LoginPageProps> = () => {
     const navigate = useNavigate();
 
     const dispatch = useAppDispatch();
-    const { isAuthenticated, isSuccess} = useAppSelector(state => state.auth);
+    const { isSuccess} = useAppSelector(state => state.auth);
 
     const inputRef = useRef<HTMLInputElement | null>(null);
     const [email, setEmail] = useState<string>('');

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
-import { DecodedJwt, DisplayUser, JWT, LoginResponse, LoginUser, NewUser } from './auth.interfaces';
+import { DecodedJwt, DisplayUser, LoginResponse, LoginUser, NewUser } from './auth.interfaces';
 
-const url = process.env.REACT_API_HOST || 'http://localhost:5000/api'
+export const url = process.env.REACT_API_HOST || 'http://localhost:5000/api'
 const register = async (user: NewUser): Promise<DisplayUser | null> => {
     const response = await axios.post(`${url}/auth/register`, user);
     return response.data ;
@@ -20,8 +20,7 @@ const login = async (user: LoginUser): Promise<LoginResponse> => {
         token: ''
     };
     if(response.data){
-        localStorage.setItem('accessToken', JSON.stringify(response.data.token));
-
+        localStorage.setItem('accessToken', response.data.token);
         const decodeJwt: DecodedJwt = jwt_decode(response.data.token);
         localStorage.setItem('user', JSON.stringify(decodeJwt.user));
         output =  {
