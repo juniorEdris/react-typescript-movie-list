@@ -7,7 +7,7 @@ const MovieCard: FC<MovieCardProps> = (props) => {
     return ( 
         <div className={Styles.movie_body} key={movie?.id}>
             <div className={Styles.movie_image}>
-            <img src={movie?.image} alt="movie_one" />
+                {!movie?.image ? <img src='/images/placeholder.png' alt={movie?.name} /> : <img src={movie?.image} alt={movie?.name} />}
             </div>
             <div className={Styles.movie_header}>
             <div className={Styles.movie_name}>{movie?.name}</div>

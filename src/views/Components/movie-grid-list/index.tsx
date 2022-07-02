@@ -3,6 +3,7 @@ import { FC, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "store/store";
 import MovieCard from "views/Components/movie-card";
 import Styles from "../../../css/MovieGridList.module.css";
+import Loader from "views/Components/Loader/Loader";
  
 const MovieGridList:FC = () => {
 
@@ -16,9 +17,13 @@ useEffect(() => {
     
     return ( 
       <>
-       { isLoading ? 'Loading' :  
+       { isLoading ? 
+       <div className="loader_wave">
+        <Loader />
+       </div>
+       :  
        <div>
-          <h1>Movie Grid List</h1> <br/>
+          <h1>Movie List</h1> <br/>
           <div className={Styles.movie_list_container}>
           {
             movies?.map(movie=>(<MovieCard movie={movie} />))

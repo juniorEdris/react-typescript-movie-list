@@ -3,7 +3,6 @@ import SeachBar from "views/Components/search-bar";
 import MovieGridList from "views/Components/movie-grid-list";
 import Header from "views/page-header";
 import Navbar from "views/Components/navbar";
-import Dropdown from "views/Components/filter";
 import AddMoviePage from "views/Components/add-movie-form";
  
 const LandingPage: FC = () => {
@@ -13,7 +12,6 @@ const LandingPage: FC = () => {
             <Header />
             <AddMoviePage />
             <SeachBar />
-            <Dropdown />
             <MovieGridList />
         </div>
      );

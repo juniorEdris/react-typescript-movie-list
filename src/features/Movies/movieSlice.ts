@@ -36,6 +36,14 @@ export const addMovie = createAsyncThunk('add-movie', async (movie: Movie) => {
   }
 });
 
+export const searchMovie = createAsyncThunk('search-movie', async (search: string) => {
+  try {
+    return await movieServices.searchMovies(search);
+  } catch (error) {
+    console.log('Error: ', error);
+  }
+});
+
 export const movieSlice = createSlice({
   name: 'movie',
   initialState,
@@ -55,11 +63,22 @@ export const movieSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.movies = [];
-      });
+      })
+    // SEARCH MOVIES
+      .addCase(searchMovie.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(searchMovie.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.movies = action.payload;
+      })
+      .addCase(searchMovie.rejected, (state) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.movies = [...state.movies];
+      })
   },
 });
-
-// export const { incrementProduct, decrementProduct, resetCart } =
-// movieSlice.actions;
 
 export default movieSlice.reducer;

@@ -1,9 +1,14 @@
-import React,{ FC, useState } from 'react'
+import { getMovies, searchMovie } from 'features/Movies/movieSlice';
+import React,{ FC, useEffect, useState } from 'react'
+import { useAppDispatch } from 'store/store';
 import Styles from "../../../css/SearchBar.module.css";
 
 const SeachBar:FC = () => {
 
-  const [searchVal, setSearchVal] = useState<string>('');
+  const dispatch = useAppDispatch();
+  
+
+  const [searchVal, setSearchVal] = useState<string>('');  
   
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchVal(e.target.value);
@@ -12,6 +17,16 @@ const SeachBar:FC = () => {
   const handleClearBtn = () => {    
     setSearchVal('');
   }
+
+  useEffect(() => {
+    if(searchVal){
+      dispatch(searchMovie(searchVal))
+    }else{
+      dispatch(getMovies())
+    }
+  }, [searchVal])
+  
+
   return (
     <div className={Styles.container}>
     <div className={Styles.input_wrap}>

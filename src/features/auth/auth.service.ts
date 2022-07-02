@@ -44,6 +44,12 @@ const verifyToken = async (jwt: string): Promise<boolean> => {
   
     if (response.data) {
       const jwtExpirationMs = response.data.exp * 1000;
+      if (!(jwtExpirationMs > Date.now())){
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('user');
+        window.location.replace('/')
+      }
+      
       return jwtExpirationMs > Date.now();
     }
   

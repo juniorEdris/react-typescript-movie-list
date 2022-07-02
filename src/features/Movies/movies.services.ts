@@ -35,9 +35,19 @@ const addMovie = async (movie:Movie) => {
   return response.data;
 };
 
+const searchMovies = async (search:string) => {
+  
+  const response = await API().post(
+    `/movies/search`, {query: search}
+  );
+    
+  return response.data;
+};
+
 const movieServices = {
   getMovies,
-  addMovie
+  addMovie,
+  searchMovies
 };
 
 export default movieServices;

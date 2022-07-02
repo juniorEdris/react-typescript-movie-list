@@ -11,7 +11,6 @@
     margin-bottom: 5px;
     border-radius: 3px;
     padding: 5px;
-    cursor: pointer;
 }
 .movie_body::after{
     content: '';
